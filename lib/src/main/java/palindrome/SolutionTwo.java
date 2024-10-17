@@ -1,4 +1,4 @@
-public class solution {
+public class SolutionTwo {
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {
             throw new IllegalArgumentException("Input string is null or empty");
