@@ -20,16 +20,18 @@ Constraints:
 - 1 <= s.length <= 10^5
 - s consists of lowercase English letters. */
 
-public class solutionTwo
+public class SolutionTwo
 {
     public boolean validPalindrome(String s)
     {
         int left = 0, right = s.length() - 1;
         while (left < right)
         {
-            if (s.charAt(left) != s.charAt(right))
+            char leftChar = s.charAt(left);
+            char rightChar = s.charAt(right);
+            if (leftChar != rightChar)
             {
-                return validPalindromeAlteration(s, left + 1, right) || validPalindromeAlteration(s, left, right - 1);
+                return isValidPalindrome(s, left + 1, right) || isValidPalindrome(s, left, right - 1);
             }
             left++;
             right--;
@@ -37,7 +39,7 @@ public class solutionTwo
         return true;
     }
 
-    private boolean validPalindromeAlteration(String s, int left, int right)
+    private boolean isValidPalindrome(String s, int left, int right)
     {
         while (left < right)
         {
@@ -51,6 +53,14 @@ public class solutionTwo
         return true;
     }
 }
+
+// The above code is an implementation of the solution to the problem "680. Valid Palindrome II" on LeetCode.
+// Approach:
+// 1. We will use two pointers, left and right, to traverse the string from both ends towards the center.
+// 2. If the characters at the left and right pointers are equal, we will increment the left pointer and decrement the right pointer.
+// 3. If the characters at the left and right pointers are not equal, we will check if the string is a palindrome after deleting the character at the left pointer or the character at the right pointer.
+// 4. To check if the string is a palindrome after deleting a character, we will create a helper function isValidPalindrome that takes the string and the indices of the left and right pointers.
+// 5. In the isValidPalindrome function, we will check if the characters at the left and right pointers are equal. If they are not
 
 // Time Complexity: O(n)
 // Space Complexity: O(1) - because we are not using any extra space to create a new string or array. We are just using two pointers to traverse the string from both ends towards the center.
