@@ -1,9 +1,9 @@
 {
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+    "java.project.sourcePaths": [
+        "src"
     ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [],
     "cursor.general.enableShadowWorkspace": true,
     "cursor.cpp.enablePartialAccepts": true,
     "cursor.diffs.useCharacterLevelDiffs": true
