@@ -1,3 +1,5 @@
+package palindrome;
+
 public class SolutionTwo {
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {
