@@ -5,7 +5,8 @@ public class solution {
         }
 
         int left = 0;
-        int right = s.length() - 1; // sets the two pointers to the start and end of the string 
+        int right = s.length() - 1; // sets the two pointers to the start and end of the string \
+        int countValidChars = 0; // Counter for valid alphanumeric characters
 
         while (left < right) { // while the two pointers are not in the same position
             char leftChar = s.charAt(left); // gets the character at the left pointer
@@ -16,6 +17,7 @@ public class solution {
             } else if (!Character.isLetterOrDigit(rightChar)) { // if the character at the right pointer is not a letter or digit
                 right--; // move the right pointer to the left
             } else { // if the characters at the two pointers are letters or digits
+                countValidChars++; // Increment valid character count
                 if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar)) { // if the characters are not the same
                     return false; // the string is not a palindrome
                 }
@@ -24,7 +26,7 @@ public class solution {
             }
         }
 
-        return true;
+        return countValidChars == 0 || left >= right; // Return true if no valid characters were found
     }
 }
 

@@ -4,5 +4,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "cursor.general.enableShadowWorkspace": true
+    "cursor.general.enableShadowWorkspace": true,
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.diffs.useCharacterLevelDiffs": true
 }
