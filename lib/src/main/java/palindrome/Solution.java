@@ -1,43 +1,55 @@
 package palindrome;
 
+/**
+ * This class provides a method to check if a given string is a palindrome.
+ * A palindrome is a string that reads the same forward and backward, 
+ * ignoring non-alphanumeric characters and case.
+ */
 public class Solution {
+    
+    /**
+     * Checks if the input string is a palindrome.
+     *
+     * @param s the input string to check
+     * @return true if the string is a palindrome, false otherwise
+     * @throws IllegalArgumentException if the input string is null or empty
+     */
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {
             throw new IllegalArgumentException("Input string is null or empty");
         }
 
-        int left = 0;
-        int right = s.length() - 1; // sets the two pointers to the start and end of the string
-        
+        int left = 0; // Pointer starting from the beginning of the string
+        int right = s.length() - 1; // Pointer starting from the end of the string
 
-        while (left < right) { // while the two pointers are not in the same position
-            char leftChar = s.charAt(left); // gets the character at the left pointer
-            char rightChar = s.charAt(right); // gets the character at the right pointer
+        while (left < right) { // Continue until the two pointers meet
+            char leftChar = s.charAt(left); // Character at the left pointer
+            char rightChar = s.charAt(right); // Character at the right pointer
 
-            if (!Character.isLetterOrDigit(leftChar)) { // if the character at the left pointer is not a letter or digit
-                left++; // move the left pointer to the right
-            } else if (!Character.isLetterOrDigit(rightChar)) { // if the character at the right pointer is not a letter or digit
-                right--; // move the right pointer to the left
-            } else { // if the characters at the two pointers are letters or digits
-               
-                if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar)) { // if the characters are not the same
-                    return false; // the string is not a palindrome
+            // Skip non-alphanumeric characters from the left
+            if (!Character.isLetterOrDigit(leftChar)) { // Uses to check if the character is a letter or a digit, if it is not, like a space, it will skip it. Case 4. 
+                left++; // Move the left pointer to the right
+            } 
+            // Skip non-alphanumeric characters from the right
+            else if (!Character.isLetterOrDigit(rightChar)) { 
+                right--; // Move the right pointer to the left
+            } 
+            // Compare the characters at both pointers
+            else { 
+                // If characters are not the same (case insensitive)
+                if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar)) { 
+                    return false; // The string is not a palindrome
                 }
-                left++; // move the left pointer to the right
-                right--; // move the right pointer to the left
+                left++; // Move the left pointer to the right
+                right--; // Move the right pointer to the left
             }
         }
 
-        return true; // the string is a palindrome
+        return true; // The string is a palindrome
     }
 }
 
-// This uses the two pointer technique to check if the string is a palindrome.
-// It ignores non-alphanumeric characters and checks if the characters are the same with isLetterOrDigit and toLowerCase. 
-// It returns true if the string is a palindrome, false otherwise.
-
+// This implementation uses the two-pointer technique to check if the string is a palindrome.
+// It ignores non-alphanumeric characters and performs a case-insensitive comparison.
 // Time Complexity: O(n)
-// Space Complexity: O(1) - because we are not using any extra space to create a new string or array. We are just using two pointers to traverse the string from both ends towards the center.
-
-
-
+// Space Complexity: O(1) - No extra space is used apart from the pointers.

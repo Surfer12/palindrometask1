@@ -16,6 +16,10 @@ Example 3:
 Input: s = "abc"
 Output: false
 
+example 4:
+input: = " "
+output: true
+
 Constraints:
 - 1 <= s.length <= 10^5
 - s consists of lowercase English letters.
