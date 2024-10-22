@@ -6,5 +6,6 @@
     ],
     "cursor.general.enableShadowWorkspace": true,
     "cursor.cpp.enablePartialAccepts": true,
-    "cursor.diffs.useCharacterLevelDiffs": true
+    "cursor.diffs.useCharacterLevelDiffs": true,
+    "java.compile.nullAnalysis.mode": "automatic"
 }
