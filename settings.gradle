@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'palindrometask1'
-include('app')
+
