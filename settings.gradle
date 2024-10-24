@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'palindrome'
-include(lib)
+include(Library)
